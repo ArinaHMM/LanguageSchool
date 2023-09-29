@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LanguageSchool"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        FontFamily="Comic Sans MS."
+        Title="Попочка" Height="500" Width="500">
     <Grid>
+
+        <Grid.RowDefinitions >
+            <RowDefinition Height="71*"/>
+            <RowDefinition Height="413*"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width ="81*"/>
+            <ColumnDefinition Width ="419*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Image Tag='0,0' HorizontalAlignment="Left" Source="/Source/school_logo.png" />
         
+
+
+
+
+
+
     </Grid>
 </Window>

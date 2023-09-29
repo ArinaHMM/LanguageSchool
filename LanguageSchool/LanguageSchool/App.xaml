@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:LanguageSchool"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="TextBlock">
+            
+        </Style>
          
     </Application.Resources>
 </Application>
