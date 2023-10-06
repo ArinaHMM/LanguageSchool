@@ -8,10 +8,13 @@
             
         </Style>
         <Style TargetType="Button">
-            <Setter Property="Background" Value="#FF92FEC3" />
+            <Setter Property="Background" Value="#FF0DB6F6" />
             <Setter Property="FontFamily" Value="Comic Sans MS."/>
-            <Setter Property="Margin" Value="5"/> 
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="20"/>
         </Style>
+   
+        
 
     </Application.Resources>
 </Application>

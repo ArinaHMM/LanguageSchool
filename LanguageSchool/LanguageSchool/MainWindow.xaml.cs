@@ -24,15 +24,16 @@ namespace LanguageSchool
         public MainWindow()
         {
             InitializeComponent();
-            var path = @"C:\Users\222103\Desktop\Demo\Сессия 1\";
-            foreach (var item in App.db.Service.ToArray()) 
-            {
-                var FullPath = path + item.MainImagePath.Trim();
-                var imageByte = File.ReadAllBytes(FullPath);
-                item.MainImage = imageByte;
-            }
-            App.db.SaveChanges();
+            //var path = @"C:\Users\222103\Desktop\Demo\Сессия 1\";
+            //foreach (var item in App.db.Service.ToArray()) 
+            //{
+            //    var FullPath = path + item.MainImagePath.Trim();
+            //    var imageByte = File.ReadAllBytes(FullPath);
+            //    item.MainImage = imageByte;
+            //}
+            //App.db.SaveChanges();
 
+            MainFrame.Navigate(new Pages.ServiceListPage());
         }
     }
 }

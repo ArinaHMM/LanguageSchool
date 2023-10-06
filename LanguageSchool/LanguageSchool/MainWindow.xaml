@@ -12,29 +12,29 @@
     <Grid Background="#FFE7FABE">
 
 
-            <Grid.RowDefinitions  >
-                <RowDefinition Height="71*"/>
-                <RowDefinition Height="413*"/>
+        <Grid.RowDefinitions  >
+            <RowDefinition Height="71*"/>
+            <RowDefinition Height="413*"/>
 
-            </Grid.RowDefinitions>
+        </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width ="81*"/>
-                <ColumnDefinition Width ="419*"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width ="81*"/>
+            <ColumnDefinition Width ="419*"/>
 
-            </Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
 
 
-        <Image VerticalAlignment="Center" Tag='0,0' HorizontalAlignment="Center" Height="40" Source="/Source/school_logo.png" />
+        <Image VerticalAlignment="Center" Tag='0,0' HorizontalAlignment="Center" Height="77" Source="/Source/school_logo.png" Width="80" />
         <StackPanel  Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Button x:Name="BackBtn">Назад</Button>
-            <Button x:Name="ForwardBtn" Margin="10 0 0 0">Вперед</Button>
+            <Button x:Name="ForwardBtn">Вперед</Button>
         </StackPanel>
-        <Frame x:Name="MainFrame" Background="White" Grid.Row="1" Grid.ColumnSpan="2">
-            
+        <Frame x:Name="MainFrame" Background="#FFE7FABE" Grid.Row="1" Grid.ColumnSpan="2">
+
         </Frame>
-       
-        
+
+
 
 
 
