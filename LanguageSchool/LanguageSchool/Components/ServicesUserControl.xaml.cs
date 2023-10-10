@@ -21,9 +21,14 @@ namespace LanguageSchool.Components
     /// </summary>
     public partial class ServicesUserControl : UserControl
     {
-        public ServicesUserControl(byte[] image, string Title, decimal cost, String CostTime, String Discount, Visibility costVisibility)
+        public ServicesUserControl(byte[] image, string Title, decimal cost, String CostTime, Visibility costVisibility, String Discounts)
         {
             InitializeComponent();
+            if (App.isAdmin == false)
+            {
+                EditBtn.Visibility = Visibility.Hidden;
+                DeleteBtn.Visibility = Visibility.Hidden;
+            }
             BitmapImage imgSrc = new BitmapImage();
             MemoryStream ms = new MemoryStream(image);
             imgSrc.BeginInit();
@@ -35,9 +40,11 @@ namespace LanguageSchool.Components
             TitleTb.Text = Title;
             CostTb.Text = CostTime.ToString();
             ServiceImg.Source = imgSrc;
-            DiscountTB.Text = Discount;
+            //DiscountTB.Text = Discount;
             JustCost.Text = cost.ToString();
             CostTb.Visibility = costVisibility;
+            DiscountsTb.Text = Discounts.ToString();
+            
 
         }
     }

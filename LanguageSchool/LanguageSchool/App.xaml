@@ -5,13 +5,13 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style TargetType="TextBlock">
-            
+            <Setter Property="FontSize" Value="15"></Setter>
         </Style>
         <Style TargetType="Button">
             <Setter Property="Background" Value="#FF0DB6F6" />
             <Setter Property="FontFamily" Value="Comic Sans MS."/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontSize" Value="20"/>
+           <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="35"/>
         </Style>
    
         

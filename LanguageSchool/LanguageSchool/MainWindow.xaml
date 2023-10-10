@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         
         
-        Title="Попочка" Height="500" Width="500">
+        Title="Скхул" Height="500" Width="500">
 
     <Grid Background="#FFE7FABE">
 
@@ -29,6 +29,14 @@
         <StackPanel  Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Button x:Name="BackBtn">Назад</Button>
             <Button x:Name="ForwardBtn">Вперед</Button>
+            <Button Height="40" Margin="10 0 0 0" x:Name="OnBtn" Click="OnBtn_Click">
+                <TextBlock > Включить <LineBreak/> aдмина </TextBlock> </Button>
+            
+            <PasswordBox x:Name="PAsswordPb" Padding="5" Height="25" Width="50" Margin="5"></PasswordBox>
+            <Button Height="40" Margin="10 0 0 0" x:Name="OffBtn" Click="OffBtn_Click">
+                <TextBlock> Выключить <LineBreak/> админа</TextBlock>
+            </Button>
+            
         </StackPanel>
         <Frame x:Name="MainFrame" Background="#FFE7FABE" Grid.Row="1" Grid.ColumnSpan="2">
 

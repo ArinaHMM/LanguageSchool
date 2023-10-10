@@ -17,10 +17,11 @@
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" 
                       Grid.Row="1">
                 <WrapPanel Name="ServiceWrapPnl" Grid.Row="1">
+                
 
-                </WrapPanel>
+            </WrapPanel>
             </ScrollViewer>
-
+<Button x:Name="AddBtn" Grid.Row="3" Width="150" Height="30" Content="ДОБАВИТЬ"/>
 
         </Grid>
 </Page>

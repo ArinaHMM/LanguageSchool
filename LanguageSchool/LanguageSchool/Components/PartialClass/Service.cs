@@ -14,7 +14,7 @@ namespace LanguageSchool.Components
             get
             {
                 if (Discount == null)
-                    return $"{Cost} рублей за {DurationInSeconds / 60} минут";
+                    return $"{Cost:0} рублей за {DurationInSeconds / 60} минут";
                 else
                     return $"{Cost - (Cost * (decimal)Discount / 100)} рублей за {DurationInSeconds / 60} минут ";
 
@@ -24,15 +24,30 @@ namespace LanguageSchool.Components
         {
             get
             {
-             if (Discount==null)
+                if (Discount == null)
                     return Visibility.Collapsed;
-             else 
+                else
                     return Visibility.Visible;
             }
         }
 
+        public string Discounts {
+            get
+            {
+                if (Discount == null)
+                {
+                    return "-";
+                }
+                else
+                    return $"Скидка {Discount}%";
+            }
+        }
 
-    } }
+
+
+
+
+} }
         
 
     

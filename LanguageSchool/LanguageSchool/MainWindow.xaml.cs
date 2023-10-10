@@ -35,5 +35,35 @@ namespace LanguageSchool
 
             MainFrame.Navigate(new Pages.ServiceListPage());
         }
+
+        private void OnBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (PAsswordPb.Password == "1234")
+            {
+                App.isAdmin = true;
+                MessageBox.Show("Успешно, вы в режиме админа!");
+                PAsswordPb.Password = "";
+
+            }
+            
+            else if (string.IsNullOrWhiteSpace(PAsswordPb.Password))
+                {
+                MessageBox.Show("Введите пароль");
+
+            }
+            else if (PAsswordPb.Password !="1234")
+            {
+                MessageBox.Show("Вы не админ!");
+            }
+
+        }
+
+        private void OffBtn_Click(object sender, RoutedEventArgs e)
+            
+        {
+            App.isAdmin = false;
+            MessageBox.Show("Отключение");
+            PAsswordPb.Password = "";
+        }
     }
 }
