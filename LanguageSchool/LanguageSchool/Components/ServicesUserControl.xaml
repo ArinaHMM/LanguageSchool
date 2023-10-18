@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:LanguageSchool.Components"
              mc:Ignorable="d" 
              d:DesignHeight="205" d:DesignWidth="870" Background="White" >
-    <Border Margin="30" BorderThickness="3" BorderBrush="Black" Width="800" >
+    <Border x:Name="MainBorder" Margin="30" BorderThickness="3" BorderBrush="Black" Width="800" >
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*"/>
