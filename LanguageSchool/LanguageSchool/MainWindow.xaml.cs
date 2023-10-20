@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LanguageSchool.Components;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,8 +33,10 @@ namespace LanguageSchool
             //    item.MainImage = imageByte;
             //}
             //App.db.SaveChanges();
-
-            MainFrame.Navigate(new Pages.ServiceListPage());
+            
+            Navigation.mainWindow = this;
+            Navigation.NextPage(new PageComponent(new Pages.ServiceListPage(), "ServicePage"));
+           // MainFrame.Navigate(new Pages.ServiceListPage());
         }
 
         private void OnBtn_Click(object sender, RoutedEventArgs e)
@@ -41,8 +44,12 @@ namespace LanguageSchool
             if (PAsswordPb.Password == "1234")
             {
                 App.isAdmin = true;
+                Navigation.ClearHistory();
                 MessageBox.Show("Успешно, вы в режиме админа!");
+                Navigation.NextPage(new PageComponent(new Pages.ServiceListPage(), "ServicePage"));
+
                 PAsswordPb.Password = "";
+               
 
             }
             
@@ -62,8 +69,17 @@ namespace LanguageSchool
             
         {
             App.isAdmin = false;
+            Navigation.ClearHistory();
             MessageBox.Show("Отключение");
+           
+            Navigation.NextPage(new PageComponent(new Pages.ServiceListPage(), "ServicePage"));
+            
             PAsswordPb.Password = "";
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.BackPage();
         }
     }
 }

@@ -26,8 +26,9 @@
 
 
         <Image VerticalAlignment="Center" Tag='0,0' HorizontalAlignment="Center" Height="77" Source="/Source/school_logo.png" Width="80" />
+        <TextBlock Name="TitleTb"></TextBlock>
         <StackPanel  Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-            <Button x:Name="BackBtn">Назад</Button>
+            <Button x:Name="BackBtn" Click="BackBtn_Click">Назад</Button>
             <Button x:Name="ForwardBtn">Вперед</Button>
             <Button Height="40" Margin="10 0 0 0" x:Name="OnBtn" Click="OnBtn_Click">
                 <TextBlock > Включить <LineBreak/> aдмина </TextBlock> </Button>
