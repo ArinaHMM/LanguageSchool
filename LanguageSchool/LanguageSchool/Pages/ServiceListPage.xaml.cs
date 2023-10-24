@@ -159,7 +159,7 @@ namespace LanguageSchool.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent(new AddEditServicePage(), "Добавить"));
+            Navigation.NextPage(new PageComponent(new Pages.AddEditServicePage(new Service()) , "Добавление услуги"));
         }
     } } 
    

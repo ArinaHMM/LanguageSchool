@@ -20,8 +20,9 @@ namespace LanguageSchool.Components
     /// <summary>
     /// Логика взаимодействия для UserControl.xaml
     /// </summary>
-    public partial class ServicesUserControl : UserControl
+    public  partial class ServicesUserControl : UserControl
     {
+        static
         Service service;
         public ServicesUserControl(Service _service)
         {
@@ -57,10 +58,17 @@ namespace LanguageSchool.Components
             BitmapImage biImg = new BitmapImage();
             try
             {
-                MemoryStream ms = new MemoryStream(image);
-                biImg.BeginInit();
-                biImg.StreamSource = ms;
-                biImg.EndInit();
+                if (service!= null)
+                {
+                    MemoryStream ms = new MemoryStream(image);
+                    biImg.BeginInit();
+                    biImg.StreamSource = ms;
+                    biImg.EndInit();
+                }
+                else
+                {
+                    biImg = new BitmapImage(new Uri(@"C:\Users\222103\Source\Repos\LanguageSchool\LanguageSchool\LanguageSchool\Source\school_logo.png", UriKind.Relative));
+                }
             }
             catch
             {
@@ -94,7 +102,10 @@ namespace LanguageSchool.Components
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent(new AddEditServicePage() , "Редактирование"));
+           // Navigation.NextPage(new PageComponent(new AddEditServicePage() , "Редактирование"));
+            {
+                Navigation.NextPage(new PageComponent(new Pages.AddEditServicePage(service), "Редактирование"));
+            }
         }
     }
 }

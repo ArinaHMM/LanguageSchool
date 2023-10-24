@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LanguageSchool.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" d:DesignWidth="800"
       Title="AddEditServicePage" Background="White" >
 
     <Grid>
@@ -13,34 +13,34 @@
         <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Идентификатор</TextBlock>
-
-                <TextBlock x:Name="IdTb"></TextBlock>
+                    <TextBox Text="{Binding ID}" ></TextBox>
+                    <TextBlock x:Name="IdTb"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <TextBlock>Название</TextBlock>
-                <TextBox></TextBox>
+                <TextBox Width="150" Height="80" Text="{Binding Title}" TextWrapping="Wrap"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <TextBlock>Стоимость</TextBlock>
-                <TextBox></TextBox>
+                    <TextBox Text="{Binding Cost}" ></TextBox>
                 </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <TextBlock>Длительность</TextBlock>
-                <TextBox></TextBox>
+                    <TextBox Text="{Binding DurationInSeconds}" ></TextBox>
                 </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock>Описание</TextBlock>
-                <TextBox></TextBox>
+                    <TextBox  Text="{Binding Description }"></TextBox>
                 </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock>Скидка</TextBlock>
-                <TextBox></TextBox>
+                <TextBlock >Скидка</TextBlock>
+                    <TextBox Text="{Binding Discount }" ></TextBox>
                 </StackPanel>
             <StackPanel >
-                <Image  x:Name="MainImage" Height="70"></Image>
-                <Button Name="EditImageBtn">
+                    <Image Source="{Binding MainImage}"  x:Name="MainImage" Height="90"></Image>
+                <Button Name="EditImageBtn" Click="EditImageBtn_Click">
                     Изменить изображение</Button>
-                <Button Name="SaveImageBtn"> Сохранить изменения</Button>
+                <Button Name="SaveImageBtn" Click="SaveImageBtn_Click"> Сохранить изменения</Button>
             </StackPanel>
 
 

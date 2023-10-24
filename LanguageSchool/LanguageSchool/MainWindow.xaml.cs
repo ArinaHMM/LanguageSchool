@@ -60,7 +60,7 @@ namespace LanguageSchool
             }
             else if (PAsswordPb.Password !="1234")
             {
-                MessageBox.Show("Вы не админ!");
+                MessageBox.Show("Пароль неверный. Вы что, не админ????");
             }
 
         }
