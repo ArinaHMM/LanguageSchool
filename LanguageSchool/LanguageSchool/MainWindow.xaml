@@ -9,7 +9,7 @@
         
         Title="Скхул" Height="500" Width="500">
 
-    <Grid Background="#FFE7FABE">
+    <Grid Background="#FFE7FABE" Margin="0,0,-350,0">
 
 
         <Grid.RowDefinitions  >

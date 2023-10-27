@@ -22,8 +22,10 @@ namespace LanguageSchool.Components
     /// </summary>
     public  partial class ServicesUserControl : UserControl
     {
-        static
-        Service service;
+       public static
+        Service service
+        { get; set; }
+
         public ServicesUserControl(Service _service)
         {
             InitializeComponent();
@@ -67,7 +69,7 @@ namespace LanguageSchool.Components
                 }
                 else
                 {
-                    biImg = new BitmapImage(new Uri(@"C:\Users\222103\Source\Repos\LanguageSchool\LanguageSchool\LanguageSchool\Source\school_logo.png", UriKind.Relative));
+                    biImg = new BitmapImage(new Uri("/Source/school_logo.png", UriKind.Relative));
                 }
             }
             catch

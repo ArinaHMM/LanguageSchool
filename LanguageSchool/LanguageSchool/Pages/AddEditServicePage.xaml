@@ -18,15 +18,15 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <TextBlock>Название</TextBlock>
-                <TextBox Width="150" Height="80" Text="{Binding Title}" TextWrapping="Wrap"></TextBox>
+                <TextBox Width="100" Height="80" Text="{Binding Title}" TextWrapping="Wrap"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <TextBlock>Стоимость</TextBlock>
-                    <TextBox Text="{Binding Cost}" ></TextBox>
+                    <TextBox Text="{Binding Cost}" PreviewTextInput="TextBox_PreviewTextInput" ></TextBox>
                 </StackPanel>
             <StackPanel Orientation="Horizontal" >
-                <TextBlock>Длительность</TextBlock>
-                    <TextBox Text="{Binding DurationInSeconds}" ></TextBox>
+                <TextBlock>Длительность(в секундах)</TextBlock>
+                    <TextBox PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding DurationInSeconds}" ></TextBox>
                 </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock>Описание</TextBlock>
@@ -34,12 +34,22 @@
                 </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock >Скидка</TextBlock>
-                    <TextBox Text="{Binding Discount }" ></TextBox>
+                    <TextBox PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding Discount }" ></TextBox>
                 </StackPanel>
-            <StackPanel >
-                    <Image Source="{Binding MainImage}"  x:Name="MainImage" Height="90"></Image>
+            <StackPanel Height="194" >
+                    <Image  Source="{Binding MainImage}"  x:Name="MainImage" Height="90"></Image>
                 <Button Name="EditImageBtn" Click="EditImageBtn_Click">
                     Изменить изображение</Button>
+                    <ListView Name="ImageList" Width="300">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn>
+                                    <!--<Image Source="{Binding PhotoByte}"></Image>-->
+                                </GridViewColumn>
+                            </GridView>
+                            
+                        </ListView.View>
+                    </ListView>
                 <Button Name="SaveImageBtn" Click="SaveImageBtn_Click"> Сохранить изменения</Button>
             </StackPanel>
 

@@ -20,6 +20,8 @@ namespace LanguageSchool.Pages
     /// <summary>
     /// Логика взаимодействия для ServiceListPage.xaml
     /// </summary>
+    /// 
+
     public partial class ServiceListPage : Page
     {
         public ServiceListPage()
@@ -32,6 +34,8 @@ namespace LanguageSchool.Pages
             }
             Refresh();
         }
+
+
         private void Refresh()
         {
             IEnumerable<Service> services = App.db.Service;
@@ -47,30 +51,30 @@ namespace LanguageSchool.Pages
                 }
 
             }
-            if (DiscountFilterCb.SelectedIndex != 0)
-            {
-                if (DiscountFilterCb.SelectedIndex == 1)
-                {
-                    services = services.Where(x => x.Discount == null || x.Discount < 5);
-                }
-                else if (DiscountFilterCb.SelectedIndex == 2)
-                {
-                    services = services.Where(x => x.Discount >= 5 && x.Discount < 15);
-                }
-                else if (DiscountFilterCb.SelectedIndex == 3)
-                {
-                    services = services.Where(x => x.Discount >= 15 && x.Discount < 30);
-                }
-                else if (DiscountFilterCb.SelectedIndex == 4)
-                {
-                    services = services.Where(x => x.Discount >= 30 && x.Discount < 70);
-                }
-                else if (DiscountFilterCb.SelectedIndex == 5)
-                {
-                    services = services.Where(x => x.Discount >= 70 && x.Discount <= 100);
-                }
+            //if (DiscountFilterCb.SelectedIndex != 0)
+            //{
+            //    if (DiscountFilterCb.SelectedIndex == 1)
+            //    {
+            //        services = services.Where(x => x.Discount == null || x.Discount < 5);
+            //    }
+            //    else if (DiscountFilterCb.SelectedIndex == 2)
+            //    {
+            //        services = services.Where(x => x.Discount >= 5 && x.Discount < 15);
+            //    }
+            //    else if (DiscountFilterCb.SelectedIndex == 3)
+            //    {
+            //        services = services.Where(x => x.Discount >= 15 && x.Discount < 30);
+            //    }
+            //    else if (DiscountFilterCb.SelectedIndex == 4)
+            //    {
+            //        services = services.Where(x => x.Discount >= 30 && x.Discount < 70);
+            //    }
+            //    else if (DiscountFilterCb.SelectedIndex == 5)
+            //    {
+            //        services = services.Where(x => x.Discount >= 70 && x.Discount <= 100);
+            //    }
 
-            }
+            //}
             if (SearchTb.Text != null)
             {
                 services = services.Where(x => x.Title.Contains(SearchTb.Text));
@@ -80,6 +84,7 @@ namespace LanguageSchool.Pages
             {
                 ServiceWrapPanel.Children.Add(
                     new ServicesUserControl(service));
+                   // new ServicesUserControl(service));
             }
             CountOfItems.Text = $"{services.Count()} из {App.db.Service.Count()}";
         }

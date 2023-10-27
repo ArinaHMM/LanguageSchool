@@ -23,7 +23,7 @@ namespace LanguageSchool.Pages
     /// </summary>
     public partial class AddEditServicePage : Page
     {
-        private Service service; 
+         Service service; 
         public AddEditServicePage(Service _service)
         {
             InitializeComponent();
@@ -32,26 +32,58 @@ namespace LanguageSchool.Pages
         }
 
         private void EditImageBtn_Click(object sender, RoutedEventArgs e)
+
         {
             OpenFileDialog openFile = new OpenFileDialog()
             {
                 Filter = "*.png|*.png|*.jpg|*.jpg|*.jpeg|*.jpeg"
             };
-            if(openFile.ShowDialog().GetValueOrDefault())
+            if(openFile.ShowDialog() != null)
             {
-                service.MainImage = File.ReadAllBytes
-                    (openFile.FileName);
+                service.MainImage = File.ReadAllBytes(openFile.FileName);
                 MainImage.Source = new BitmapImage(new Uri(openFile.FileName));
             }
+            if (service.DurationInSeconds > 14400)
+            {
+                MessageBox.Show("Длительность не может превышать 4-х часов!");
+            }
+
         }
 
         private void SaveImageBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(service.ID == 0 )
+            StringBuilder errors = new StringBuilder();
+            if (App.db.Service.Any(x => x.Title == service.Title))
+            {
+                errors.AppendLine("Такая услуга уже существует!");
+            }
+            else
             {
                 App.db.Service.Add(service);
             }
-            App.db.SaveChanges();
+            if(service.DurationInSeconds >14400)
+            {
+                errors.AppendLine("Длительность не может превышать 4-х часов!");
+            }
+            if(errors.Length>0)
+            {
+                MessageBox.Show(errors.ToString()); 
+            }
+            else
+            {
+                App.db.SaveChanges();
+                MessageBox.Show("Сохранено!");
+                Navigation.NextPage(new PageComponent(new Pages.ServiceListPage(), "Список услуг"));
+            }
+
+        }
+
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!(char.IsDigit(e.Text[0])))
+            {
+                e.Handled=true; 
+            }
         }
     }
 }
