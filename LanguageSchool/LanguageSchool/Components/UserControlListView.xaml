@@ -8,20 +8,22 @@
              d:DesignHeight="350" d:DesignWidth="350"
              Background="White">
     <Grid>
-        <StackPanel>
+        <Border BorderBrush="Black" BorderThickness="3" Margin="3">
+            <StackPanel>
 
-            <Image Height="250" Source="{Binding PhotoByte}" Name="ServiceImg">
+            <Image Height="150" Width="150" Margin="50" Source="{Binding PhotoByte}" Name="ServiceImg">
             </Image>
            
-                <Button Name="MainBnt" Click="MainBnt_Click" >
+                <Button Width="110" Name="MainBnt" Click="MainBnt_Click" >
                     Сделать главным
                 </Button>
-            <Button Name="DeletePhotoBtn" Click="DeletePhotoBtn_Click">
+            <Button Width="60" Name="DeletePhotoBtn" Click="DeletePhotoBtn_Click">
                 Удалить
             </Button>
            
             
         </StackPanel>
-            
+            </Border>
+
     </Grid>
 </UserControl>

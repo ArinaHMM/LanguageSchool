@@ -23,12 +23,14 @@ namespace LanguageSchool.Pages
     /// </summary>
     public partial class AddEditServicePage : Page
     {
-         Service service; 
+        Service service;
         public AddEditServicePage(Service _service)
         {
             InitializeComponent();
-            service = _service; 
+            service = _service;
             this.DataContext = service;
+
+            RefreshPhoto();
         }
 
         private void EditImageBtn_Click(object sender, RoutedEventArgs e)
@@ -38,7 +40,7 @@ namespace LanguageSchool.Pages
             {
                 Filter = "*.png|*.png|*.jpg|*.jpg|*.jpeg|*.jpeg"
             };
-            if(openFile.ShowDialog() != null)
+            if (openFile.ShowDialog() != null)
             {
                 service.MainImage = File.ReadAllBytes(openFile.FileName);
                 MainImage.Source = new BitmapImage(new Uri(openFile.FileName));
@@ -61,13 +63,13 @@ namespace LanguageSchool.Pages
             {
                 App.db.Service.Add(service);
             }
-            if(service.DurationInSeconds >14400)
+            if (service.DurationInSeconds > 14400)
             {
                 errors.AppendLine("Длительность не может превышать 4-х часов!");
             }
-            if(errors.Length>0)
+            if (errors.Length > 0)
             {
-                MessageBox.Show(errors.ToString()); 
+                MessageBox.Show(errors.ToString());
             }
             else
             {
@@ -82,8 +84,56 @@ namespace LanguageSchool.Pages
         {
             if (!(char.IsDigit(e.Text[0])))
             {
-                e.Handled=true; 
+                e.Handled = true;
             }
         }
+
+        private void AddImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            OpenFileDialog openFile = new OpenFileDialog()
+            {
+                Filter = "*.png|*.png|*.jpg|*.jpg|*.jpeg|*.jpeg"
+            };
+            if (openFile.ShowDialog().GetValueOrDefault())
+            {
+                App.db.ServicePhoto.Add(new ServicePhoto
+                {
+                    ServiceID = service.ID,
+                    PhotoByte = File.ReadAllBytes(openFile.FileName)
+
+                });
+                App.db.SaveChanges();
+
+            }
+        }
+        private void RefreshPhoto()
+        {
+            foreach (var photo in service.ServicePhoto)
+            {
+                PhoroWp.Children.Add(new UserControlListView(photo));
+            }
+
+        }
+
     }
 }
+
+     
+
+        //PhoroWp.Children.Clear();
+        //        foreach (var photo in service.ServicePhoto)
+        //        {
+        //            PhoroWp.Children.Add(new UserControlListView(photo));
+        //        }
+
+
+
+
+
+
+
+
+
+
+

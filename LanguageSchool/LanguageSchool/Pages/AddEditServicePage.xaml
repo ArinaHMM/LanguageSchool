@@ -36,18 +36,16 @@
                 <TextBlock >Скидка</TextBlock>
                     <TextBox PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding Discount }" ></TextBox>
                 </StackPanel>
-                <StackPanel Height="194" >
+                <StackPanel Height="264" >
                     <Image  Source="{Binding MainImage}"  x:Name="MainImage" Height="90"></Image>
                     <Button Name="EditImageBtn" Click="EditImageBtn_Click">
                         Изменить изображение</Button>
 
-                    <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Grid.RowSpan="1"> </ScrollViewer>
-                    <WrapPanel Name="PhoroWp" Grid.Row="1">
-                    </WrapPanel>
-                    <!--<ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Grid.RowSpan="1">
-                        <WrapPanel Name="PhoroWp" Grid.Row="1">
-
-                        </WrapPanel>-->
+                    <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Grid.RowSpan="1"> 
+                    <WrapPanel Width="140" Height="30" Margin="10" Name="PhoroWp" Grid.Row="1">
+                    </WrapPanel></ScrollViewer>
+                    <Button Name="AddImageBtn" Click="AddImageBtn_Click" >Добавить</Button>
+                  
 
                         <Button Name="SaveImageBtn" Click="SaveImageBtn_Click">Сохранить изменения</Button>
                 </StackPanel>

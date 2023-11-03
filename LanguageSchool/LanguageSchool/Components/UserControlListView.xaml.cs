@@ -20,12 +20,13 @@ namespace LanguageSchool.Components
     /// </summary>
     public partial class UserControlListView : UserControl
     {
-        ServicePhoto servicePhoto;
-        public UserControlListView(ServicePhoto _servicePhoto)
+        ServicePhoto service;
+        public UserControlListView(ServicePhoto _service)
         {
             InitializeComponent();
-            servicePhoto = _servicePhoto;
-            this.DataContext = servicePhoto;
+            service = _service;
+            this.DataContext = service;
+            
         }
 
         private void MainBnt_Click(object sender, RoutedEventArgs e)
