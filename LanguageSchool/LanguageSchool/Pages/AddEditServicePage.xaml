@@ -36,29 +36,42 @@
                 <TextBlock >Скидка</TextBlock>
                     <TextBox PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding Discount }" ></TextBox>
                 </StackPanel>
-            <StackPanel Height="194" >
+                <StackPanel Height="194" >
                     <Image  Source="{Binding MainImage}"  x:Name="MainImage" Height="90"></Image>
-                <Button Name="EditImageBtn" Click="EditImageBtn_Click">
-                    Изменить изображение</Button>
-                    <ListView Name="ImageList" Width="300">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn>
-                                    <!--<Image Source="{Binding PhotoByte}"></Image>-->
-                                </GridViewColumn>
-                            </GridView>
-                            
-                        </ListView.View>
-                    </ListView>
-                <Button Name="SaveImageBtn" Click="SaveImageBtn_Click"> Сохранить изменения</Button>
-            </StackPanel>
+                    <Button Name="EditImageBtn" Click="EditImageBtn_Click">
+                        Изменить изображение</Button>
 
+                    <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Grid.RowSpan="1"> </ScrollViewer>
+                    <WrapPanel Name="PhoroWp" Grid.Row="1">
+                    </WrapPanel>
+                    <!--<ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Grid.RowSpan="1">
+                        <WrapPanel Name="PhoroWp" Grid.Row="1">
 
+                        </WrapPanel>-->
 
+                        <Button Name="SaveImageBtn" Click="SaveImageBtn_Click">Сохранить изменения</Button>
                 </StackPanel>
+            </StackPanel>
         </Border>
 
 
 
     </Grid>
 </Page>
+<!--<ListView Name="ImageList" Width="300">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn>
+                                    <Image Source="{Binding PhotoByte}"></Image>
+                                </GridViewColumn>
+                            </GridView>
+                            
+                        </ListView.View>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel>
+                                    
+                                </WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>-->

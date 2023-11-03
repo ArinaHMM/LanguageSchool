@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="LanguageSchool.Components.UserControlListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LanguageSchool.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="350"
+             Background="White">
+    <Grid>
+        <StackPanel>
+
+            <Image Height="250" Source="{Binding PhotoByte}" Name="ServiceImg">
+            </Image>
+           
+                <Button Name="MainBnt" Click="MainBnt_Click" >
+                    Сделать главным
+                </Button>
+            <Button Name="DeletePhotoBtn" Click="DeletePhotoBtn_Click">
+                Удалить
+            </Button>
+           
+            
+        </StackPanel>
+            
+    </Grid>
+</UserControl>
