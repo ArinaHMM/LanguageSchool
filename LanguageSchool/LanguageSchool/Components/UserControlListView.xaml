@@ -5,13 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LanguageSchool.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="350"
+             d:DesignHeight="150" d:DesignWidth="175"
              Background="White">
     <Grid>
         <Border BorderBrush="Black" BorderThickness="3" Margin="3">
             <StackPanel>
 
-            <Image Height="150" Width="150" Margin="50" Source="{Binding PhotoByte}" Name="ServiceImg">
+            <Image Height="50" Width="50" Margin="10" Source="{Binding PhotoByte}" Name="ServiceImg">
             </Image>
            
                 <Button Width="110" Name="MainBnt" Click="MainBnt_Click" >

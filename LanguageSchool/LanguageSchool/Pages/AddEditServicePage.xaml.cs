@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace LanguageSchool.Pages
 {
@@ -27,6 +28,7 @@ namespace LanguageSchool.Pages
         public AddEditServicePage(Service _service)
         {
             InitializeComponent();
+            App.servicePage = this;
             service = _service;
             this.DataContext = service;
 
@@ -106,15 +108,34 @@ namespace LanguageSchool.Pages
                 App.db.SaveChanges();
 
             }
+            RefreshPhoto();
         }
-        private void RefreshPhoto()
+        public void RefreshPhoto()
         {
+            PhoroWp.Children.Clear();
             foreach (var photo in service.ServicePhoto)
             {
                 PhoroWp.Children.Add(new UserControlListView(photo));
             }
+            BitmapImage biImg = new BitmapImage();
+           
+                if (service != null)
+                {
+                    MemoryStream ms = new MemoryStream(service.MainImage);
+                    biImg.BeginInit();
+                    biImg.StreamSource = ms;
+                    biImg.EndInit();
+                    MainImage.Source = biImg;
+                }
+            }
+            
 
+            
+        private void LoadedPage()
+        {
+            RefreshPhoto();
         }
+
 
     }
 }

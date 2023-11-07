@@ -35,11 +35,13 @@ namespace LanguageSchool.Components
                 
                 EditBtn.Visibility = Visibility.Collapsed;
                 DeleteBtn.Visibility = Visibility.Collapsed;
+                EntryBtn.Visibility = Visibility.Collapsed;
             }
             else
             {
                 EditBtn.Visibility = Visibility.Visible;
                 DeleteBtn.Visibility = Visibility.Visible;
+                EntryBtn.Visibility= Visibility.Visible;
             }
             //byte[] image, string title, decimal cost, string CostTime,string DiscountString, Visibility CostVisibility
             //ServiceImg.Source = "C:\\Users\\222103\\source\\repos\\LanguageSchool\\LanguageSchool\\LanguageSchool\\Source\\school_logo.png"
@@ -108,6 +110,12 @@ namespace LanguageSchool.Components
             {
                 Navigation.NextPage(new PageComponent(new Pages.AddEditServicePage(service), "Редактирование"));
             }
+        }
+
+        private void EntryBtn_Click(object sender, RoutedEventArgs e)
+
+        {
+            Navigation.NextPage(new PageComponent(new Pages.ClientRecordPage(service), "Запись"));
         }
     }
 }

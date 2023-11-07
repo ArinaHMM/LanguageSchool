@@ -31,12 +31,23 @@ namespace LanguageSchool.Components
 
         private void MainBnt_Click(object sender, RoutedEventArgs e)
         {
+            // var serviceId = service.ServiceID;
+            var selPhoto = service.PhotoByte;
+            service.PhotoByte = service.Service.MainImage;
+            service.Service.MainImage = selPhoto;
+            App.servicePage.RefreshPhoto();
+            App.db.SaveChanges();
 
         }
 
         private void DeletePhotoBtn_Click(object sender, RoutedEventArgs e)
         {
+            //var selPhoto = sender as ServicePhoto;
+            App.db.ServicePhoto.Remove(service);
+            App.servicePage.RefreshPhoto();
+            App.db.SaveChanges(); 
 
         }
+
     }
 }

@@ -1,0 +1,28 @@
+﻿<Page x:Class="LanguageSchool.Pages.ClientRecordPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LanguageSchool.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="ClientRecordPage" Background="White">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="{Binding Title}"></TextBlock>
+            <TextBlock Text="{Binding CostTime}"></TextBlock>
+            <ComboBox  Name="ClientCb" Width="200" ></ComboBox>
+            
+            <DatePicker Name="DateDp" Margin="10"> </DatePicker>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="15"> Время ХХ:ХХ</TextBlock>
+                <TextBox Width="80" x:Name="StartTimeTb"></TextBox>
+                <TextBox Width="80" x:Name="EndTimeTb" IsEnabled="False" ></TextBox>
+            </StackPanel>
+            <Button Width="65" x:Name="EntryBtn" Click="EntryBtn_Click">
+                Записать
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

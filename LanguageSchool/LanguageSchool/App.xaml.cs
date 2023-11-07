@@ -1,4 +1,5 @@
 ﻿using LanguageSchool.Components;
+using LanguageSchool.Pages;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,5 +17,6 @@ namespace LanguageSchool
     {
         public static LanguageSchool1Entities db = new LanguageSchool1Entities();
         public static bool isAdmin = false;
+        public static AddEditServicePage servicePage;
     }
 }
